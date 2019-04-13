@@ -26,7 +26,7 @@ pipeline{
 				echo 'Printing Java Version'
 				sh 'java -version'	
 				echo 'Printing Node Version'
-				sh 'node --version'a	
+				sh 'node --version'	
 			}
 		}
 	}
