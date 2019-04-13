@@ -1,10 +1,9 @@
 pipeline{
-	agent{
-		docker{
-			image 'maven:3-alpine'
-			args '-v /root/.m2:/root/.m2'
-		}
+	
+	agent {
+		dockerfile true
 	}
+	
 	stages{
 		stage('Build'){
 			steps{
@@ -22,15 +21,12 @@ pipeline{
                 }
             }
 		}
-		stage('Execute Java'){
-			agent{
-				docker {
-					image 'java'
-				}
-			}
+		stage('Execute Java && Node'){
 			steps{
 				echo 'Printing Java Version'
-				sh 'java -version'		
+				sh 'java -version'	
+				echo 'Printing Node Version'
+				sh 'node --version'a	
 			}
 		}
 	}
