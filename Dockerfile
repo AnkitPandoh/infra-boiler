@@ -1,2 +1,2 @@
-FROM maven:3-alpine
-RUN apk-update && apk add nodejs
+FROM alpine:latest
+RUN apk-update && apk add maven:latest && apk add nodejs
