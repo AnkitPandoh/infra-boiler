@@ -14,7 +14,8 @@ public class MainLogicTest {
 			fail("Construction failed.");
 		}
 	}
-
+	
+	@Test
 	public void testGetMessage() {
 		assertEquals("Hello World", new MainLogic("Hello World").getMessage());
 	}

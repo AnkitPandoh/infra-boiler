@@ -4,9 +4,6 @@ pipeline{
 			image 'maven:3-alpine'
 			args '-v /root/.m2:/root/.m2'
 		}
-		docker {
-			image 'openjdk'
-		}
 	}
 	stages{
 		stage('Build'){
@@ -26,6 +23,11 @@ pipeline{
             }
 		}
 		stage('Execute Java'){
+			agent{
+				docker {
+					image 'java'
+				}
+			}
 			steps{
 				echo 'Printing Java Version'
 				sh 'java -version'		
