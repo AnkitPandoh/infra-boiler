@@ -14,4 +14,4 @@ RUN curl -s -L https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/s
 ENV SONAR_RUNNER_HOME=${WORKDIR}/sonar-scanner
 ENV PATH $PATH:${WORKDIR}/sonar-scanner/bin
 
-RUN sed -i 's/use_embedded_jre=true/use_embedded_jre=false/g'
+RUN sed -i 's/use_embedded_jre=true/use_embedded_jre=false/g' ${WORKDIR}/sonar-scanner/bin/sonar-scanner
