@@ -21,12 +21,9 @@ pipeline{
                 }
             }
 		}
-		stage('Execute Java && Node'){
+		stage('sonar'){
 			steps{
-				echo 'Printing Java Version'
-				sh 'java -version'	
-				echo 'Printing Node Version'
-				sh 'node --version'	
+				sh 'sonar-scanner'
 			}
 		}
 	}
