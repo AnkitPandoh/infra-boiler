@@ -22,9 +22,11 @@ pipeline{
             }
 		}
 		stage('sonar'){
+		withSonarQubeEnv('Sonar-Qube'){
 			steps{
 				sh 'sonar-scanner'
 			}
 		}
 	}
+  }
 }
