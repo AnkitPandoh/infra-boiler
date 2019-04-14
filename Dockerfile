@@ -10,6 +10,8 @@ RUN curl -s -L https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/s
   && unzip -qq sonarscanner.zip \
   && rm -rf sonarscanner.zip \
   && mv sonar-scanner-3.3.0.1492-linux sonar-scanner
+  
+COPY sonar-scanner.properties sonar-scanner/conf/sonar-scanner.properties
 
 ENV SONAR_RUNNER_HOME=${WORKDIR}/sonar-scanner
 ENV PATH $PATH:${WORKDIR}/sonar-scanner/bin
